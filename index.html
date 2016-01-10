@@ -16,22 +16,32 @@
 
     <script type="text/javascript">
       function init(){
-        var stage = new createjs.Stage("gameCanvas");
-        var gameView = new SpaceInvaders.GameView(stage);
+        var canvas = document.getElementById("canvas");
+        // var stage = new createjs.Stage(canvas);
 
-        createjs.Ticker.setFPS(40);
-        createjs.Ticker.setInterval(25);
-        createjs.Ticker.addEventListener("tick", function(){
-          stage.removeAllChildren();
-          gameView.game.draw();
-          stage.update();
-        });
+        var ctx = canvas.getContext("2d");
+        ctx.canvas.width  = 500;
+        ctx.canvas.height = 600;
+
+        var gameView = new SpaceInvaders.GameView(ctx);
+        gameView.start();
+
+        // createjs.Ticker.setFPS(32);
+        // createjs.Ticker.setInterval(1);
+
+        // createjs.Ticker.addEventListener("tick", function(){
+        //   console.log("s");
+        //   gameView.game.draw();
+        //   // stage.removeAllChildren();
+        //   // stage.update();
+        // });
+
       }
     </script>
   </head>
 
   <body onload="init();">
-    <canvas id="gameCanvas" width="500" height="800"></canvas>
+    <canvas id="canvas" width="500" height="600"></canvas>
   </body>
 
 </html>
