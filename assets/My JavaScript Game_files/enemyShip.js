@@ -8,16 +8,13 @@
     this.radius = EnemyShip.RADIUS;
     this.vel = EnemyShip.VEL;
     this.angle = EnemyShip.ANGLE;
-    this.speed = specs.speed || EnemyShip.SPEED;
+    this.speed = EnemyShip.SPEED;
     this.isWeaponized = false || specs.isWeaponized;
+    this.src = specs.src;
     this.targetPos = specs.targetPos;
     this.health = 3;
     this.id = specs.id;
     SpaceInvaders.MovingObject.call(this, specs);
-    this.SKIN = new Image();
-    this.SKIN.src = specs.src;
-    this.roatationAngle = specs.roatationAngle || 0.5*Math.PI;
-    this.roatationAngleIncrement = specs.roatationAngleIncrement || 0;
   };
 
   EnemyShip.RADIUS = 50;
@@ -29,14 +26,14 @@
 
   SpaceInvaders.Util.inherits(EnemyShip, SpaceInvaders.MovingObject);
 
-  // EnemyShip.SKIN = new Image();
-  // EnemyShip.SKIN.src = EnemyShip.src;// || './assets/enemyShip1.png';
+  EnemyShip.SKIN = new Image();
+  EnemyShip.SKIN.src = EnemyShip.src || './assets/ship2.png';
 
   EnemyShip.prototype.draw = function (ctx) {
     ctx.save();
     ctx.translate(this.pos[0], this.pos[1]);
-    ctx.rotate(this.roatationAngle);
-    ctx.drawImage(this.SKIN, -EnemyShip.RADIUS/2, -EnemyShip.RADIUS/2, EnemyShip.RADIUS, EnemyShip.RADIUS);
+    ctx.rotate(0.5*Math.PI);
+    ctx.drawImage(EnemyShip.SKIN, -EnemyShip.RADIUS/2, -EnemyShip.RADIUS/2, EnemyShip.RADIUS, EnemyShip.RADIUS);
     ctx.restore();
   };
 
@@ -47,7 +44,6 @@
     this.yComponent = this.vel[1] * this.speed;
     this.pos[0] += this.xComponent;
     this.pos[1] += this.yComponent;
-    this.roatationAngle += this.roatationAngleIncrement;
   };
 
   EnemyShip.prototype.fireBullet = function (playerShip) {

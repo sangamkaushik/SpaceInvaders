@@ -72,7 +72,6 @@
     this.detectEnemyHits();
     this.detectPlayerHit();
     this.enemyKilled();
-    this.nextWave();
   };
 
   Game.prototype.fireShipBullets = function (timeGap) {
@@ -139,14 +138,12 @@
     var isEnemyPositioned = this.wave.updateEnemies();
     if (isEnemyPositioned) {
       // this.wave.moveEnemies.apply(this.wave);
-      console.log("calling nextFormation");
-      this.wave.nextFormation.apply(this.wave);
+      setInterval(this.wave.moveEnemies.bind(this.wave), 2000);
       isEnemyPositioned = false;
     }
   };
 
   Game.prototype.respawn = function () {
-    // debugger;
     if (this.lives > 0) {
       this.addPlayer();
     }
@@ -161,12 +158,6 @@
       currentFrame = 0;
     }else{
       currentFrame += 1;
-    }
-  };
-
-  Game.prototype.nextWave = function () {
-    if (this.enemyShips.length === 0) {
-      this.wave.nextWave();
     }
   };
 })();
