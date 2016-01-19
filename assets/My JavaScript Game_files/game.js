@@ -109,7 +109,6 @@
           ship.health -= this.ship().firePower;
           // Have to draw a minor hit here.
           this.playerBullets.splice(bulletIdx,1);
-          console.log(ship.health + " " + ship.radius + " " + bullet.radius);
         }
       }.bind(this));
     }.bind(this));
