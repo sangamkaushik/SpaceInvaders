@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>My JavaScript Game</title>
 
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/index.css"></link>
+
     <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
     <script src="https://code.createjs.com/tweenjs-0.6.2.min.js"></script>
 
@@ -17,6 +19,7 @@
     <script src="lib/enemyBullet.js"></script>
     <script src="lib/wave.js"></script>
     <script src="lib/game.js"></script>
+    <script src="lib/star.js"></script>
 
     <script type="text/javascript">
       function init(){
@@ -25,7 +28,8 @@
         ctx.canvas.width  = 500;
         ctx.canvas.height = 600;
         var gameView = new SpaceInvaders.GameView(ctx);
-        gameView.start();
+        gameView.startIntro();
+        // gameView.start();
       }
     </script>
   </head>
