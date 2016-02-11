@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'ARCADE';
-    src: url('../../vendor/ARCADE.ttf');
+    src: url('../../vendor/arcade-font.ttf');
 }
 .spash-page{
   -webkit-filter: blur(2px);
