@@ -87,11 +87,8 @@ Util.vectorToPoint = function (origin, point, offSet) {
   var xDiff = origin[0] - point[0];
   var yDiff = origin[1] - point[1];
   offSet = offSet || 0;
-  if ((Math.abs(xDiff) < 4) && (Math.abs(yDiff) < 4)){
-    return [Math.PI,Math.PI];
-  }else {
-    return Util.normalizeVector([xDiff, yDiff], offSet);
-  }
+
+  return Util.normalizeVector([xDiff, yDiff], offSet);
 };
 
 Util.bulletVel = function(shipPos, enemyPos, offSet){
