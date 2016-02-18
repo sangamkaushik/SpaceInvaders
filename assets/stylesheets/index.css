@@ -16,7 +16,7 @@
   z-index: -1;
 }
 
-canvas{
+#game-container{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -27,9 +27,39 @@ canvas{
   box-shadow: 0px 0px 10px 2px black;
 }
 
+canvas{
+  position: relative;
+}
+
+.contact-info{
+  position: relative;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+.contact-info > ul{
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin-left:5%;
+}
+
+.contact-info > ul > li{
+  padding-right: 2em;
+}
+
+.contact-info > ul > li > a{
+  text-decoration: none;
+}
+
 .background-container{
   height: 100vh;
   width: 100vw;
   background-image: url("../bg.jpg");
   background-size: cover;
 }
+
+a:visited { text-decoration: none; color: black; }
+a:hover { text-decoration: none; color: black; }
+a:focus { text-decoration: none; color: black; }
+a:hover, a:active { text-decoration: none; color:#333333 }
