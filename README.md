@@ -99,6 +99,6 @@ Util.bulletVel = function(shipPos, enemyPos, offSet){
 ```
 
 ## Technologies Used
-- Space Shooter is written in vanilla JavaScript.
-- It uses HTML5 canvas to render dynamic gameplay at 32 frames per second.
-- It uses [keymaster](https://github.com/madrobby/keymaster) library for handling keyboard input.
+<p>Space Shooter is written in vanilla JavaScript.</p>
+<p>It uses HTML5 canvas to render dynamic gameplay at 32 frames per second.</p>
+<p>It uses <a href="https://github.com/madrobby/keymaster">keymaster</a> library for handling keyboard input.</p>
