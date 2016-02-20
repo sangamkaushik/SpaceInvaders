@@ -50,7 +50,6 @@ canvas{
 
 .contact-info > ul > li > a{
   text-decoration: none;
-  color: black !important;
 }
 
 .background-container{
@@ -60,7 +59,6 @@ canvas{
   background-size: cover;
 }
 
-a:visited { text-decoration: none; color: black !important; }
-a:hover { text-decoration: none; color: black; }
+a:visited { text-decoration: none; color: black; }
 a:focus { text-decoration: none; color: black; }
 a:hover, a:active { text-decoration: none; color:#333333 }
