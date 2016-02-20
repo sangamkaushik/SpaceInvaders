@@ -50,6 +50,7 @@ canvas{
 
 .contact-info > ul > li > a{
   text-decoration: none;
+  color: black !important;
 }
 
 .background-container{
